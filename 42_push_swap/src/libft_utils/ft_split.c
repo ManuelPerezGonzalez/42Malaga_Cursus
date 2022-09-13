@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/13 09:36:02 by maperez-          #+#    #+#             */
+/*   Updated: 2022/09/13 09:36:06 by maperez-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int ft_count_words(char const *s, char c)
@@ -8,7 +20,7 @@ int ft_count_words(char const *s, char c)
     i = 0;
     while (s[i] && s[i] == c) // Ignore any "c" repeats at the beginning. 
         i++;
-    if (!s[i]) // Check if we're already at the end.
+if (!s[i]) // Check if we'r e already at the end.
         return (0);
     word_num = 1; // Found first "word".
     while (s[i])
