@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 09:36:30 by maperez-          #+#    #+#             */
-/*   Updated: 2022/09/13 10:48:18 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/09/20 09:40:39 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void    ft_free_stacks(st_stacks *stacks)
     free(stacks->stack_a);
     free(stacks->stack_b);
     free(stacks);
-    exir(0);
+    exit(0);
 }
 
 void    ft_free_struct(st_stacks *stacks)
