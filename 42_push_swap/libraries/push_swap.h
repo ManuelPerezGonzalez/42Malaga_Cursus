@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 09:37:10 by maperez-          #+#    #+#             */
-/*   Updated: 2022/10/19 15:54:44 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/10/20 12:33:03 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_stacks
 
 int			ft_atoi(char *str, t_stacks *stacks);
 void		*ft_calloc(int amount, int size);
-int			strncmp(const char *s1, const char *s2, int number);
+int			ft_strncmp(const char *s1, const char *s2, int number);
 int			ft_count_words(char const *s, char c);
 char		**ft_split(char const *s, char c);
 

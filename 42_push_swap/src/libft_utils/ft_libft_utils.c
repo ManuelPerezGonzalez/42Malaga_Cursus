@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 11:15:45 by maperez-          #+#    #+#             */
-/*   Updated: 2022/10/19 13:30:09 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/10/20 12:33:27 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	*ft_calloc(int amount, int size)
 	return (room);
 }
 
-int	strncmp(const char *s1, const char *s2, int number)
+int	ft_strncmp(const char *s1, const char *s2, int number)
 {
 	int	i;
 
