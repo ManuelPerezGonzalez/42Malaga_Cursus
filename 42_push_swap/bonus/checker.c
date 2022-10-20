@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 15:51:33 by maperez-          #+#    #+#             */
-/*   Updated: 2022/10/20 11:12:52 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/10/20 13:23:46 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_check(t_stacks *stack)
 	op = get_next_line(0);
 	while (op)
 	{
-		ft_is_operation(os, stack);
+		ft_is_operation(op, stack);
 		op = get_next_line(0);
 	}
 	if (!ft_is_ordered(stack))
@@ -61,7 +61,7 @@ int	main(int argc, char **argv)
 {
 	t_stacks	*stack;
 
-	stack = ft_initialize_stacks(++argc, argv - 1);
+	stack = ft_initialize_stacks(++argv, argc - 1);
 	ft_check(stack);
 	ft_free_stacks(stack);
 }

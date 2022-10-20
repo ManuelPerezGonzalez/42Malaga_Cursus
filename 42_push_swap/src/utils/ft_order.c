@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 09:36:39 by maperez-          #+#    #+#             */
-/*   Updated: 2022/10/20 10:13:45 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/10/20 12:38:53 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 // Until its ordered we'll rotate the base 2 numbers with every i iteration and
 // if the & comparison returns true, rotate the number and leave it in
 // stack_a, else push it to stack_b. Then return all of them to stack_a.
-void	ft_radix(st_stacks *stacks)
+void	ft_radix(t_stacks *stacks)
 {
 	int	i;
 	int	j;
@@ -47,7 +47,7 @@ void	ft_radix(st_stacks *stacks)
 
 // To fully understand this function,
 // you can use a notebook to simulate an array and the operations results.
-void	ft_order_three(st_stacks *stacks)
+void	ft_order_three(t_stacks *stacks)
 {
 	if (stacks->stack_a[0] > stacks->stack_a[1]
 		&& stacks->stack_a[1] > stacks->stack_a[2])
@@ -75,7 +75,7 @@ void	ft_order_three(st_stacks *stacks)
 // First of all find the two smallest numbers and push them to stack_b.
 // Then order the other three and recover pushed numbers.
 // And if its needed, order them.
-void	ft_order_five(st_stacks *stacks)
+void	ft_order_five(t_stacks *stacks)
 {
 	while (!(stacks->stack_a[0] == 0 || stacks->stack_a[0] == 1))
 		ft_rotate_a(stacks, 1);
@@ -91,7 +91,7 @@ void	ft_order_five(st_stacks *stacks)
 }
 
 // This function has to order stack_a considering its lenght.
-void	ft_order(st_stacks *stacks)
+void	ft_order(t_stacks *stacks)
 {
 	if (stacks->max_size == 2)
 		ft_swap_a(stacks, 1);

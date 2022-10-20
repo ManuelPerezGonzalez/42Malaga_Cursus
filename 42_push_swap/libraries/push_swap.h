@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 09:37:10 by maperez-          #+#    #+#             */
-/*   Updated: 2022/10/20 12:33:03 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/10/20 13:29:02 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void		ft_reverse_rotate_b(t_stacks *stack, int write);
 void		ft_reverse_rotate_both(t_stacks *stacks, int write);
 void		ft_rotate_a(t_stacks *stacks, int write);
 void		ft_rotate_b(t_stacks *stacks, int write);
+void		ft_rotate_both(t_stacks *stacks, int checkwrite);
 void		ft_rotate(int *stack, int stack_lenght, int number);
 void		ft_swap_a(t_stacks *stack, int write);
 void		ft_swap_b(t_stacks *stack, int write);

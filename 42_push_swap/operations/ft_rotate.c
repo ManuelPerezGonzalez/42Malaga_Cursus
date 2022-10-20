@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:30:20 by maperez-          #+#    #+#             */
-/*   Updated: 2022/10/19 13:29:52 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/10/20 13:18:33 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_rotate_b(t_stacks *stacks, int checkwrite)
 }
 
 // Calls both rotation functions at the same time (considered one operation).
-ft_rotate_both(t_stacks *stacks, int checkwrite)
+void	ft_rotate_both(t_stacks *stacks, int checkwrite)
 {
 	ft_rotate_a(stacks, 0);
 	ft_rotate_b(stacks, 0);

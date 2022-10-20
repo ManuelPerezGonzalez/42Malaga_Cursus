@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 18:33:28 by maperez-          #+#    #+#             */
-/*   Updated: 2022/10/19 17:01:12 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/10/20 13:30:50 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,12 @@ char	*ft_cut_line(char *memom)
 // and deletes it from said file.
 char	*get_next_line(int fd)
 {
-	static char	*memom;
+	static char	*memom = NULL;
 	char		buff[BUFFER_SIZE + 1];
 	int			n;
 	char		*new_line;
 
-	memom = NULL;
-	nl = NULL;
+	new_line = NULL;
 	n = BUFFER_SIZE;
 	buff[n] = '\0';
 	while (!ft_is_line(memom, n))
@@ -62,15 +61,15 @@ char	*get_next_line(int fd)
 		if (n == 0)
 			return (NULL);
 		if (n == 0 && !memom)
-		(
+		{
 			free(memom);
-			if (nl)
-				free(nl);
+			if (new_line)
+				free(new_line);
 			return (NULL);
-		)
+		}
 		memom = ft_strjoin(memom, buff, n);
 	}
-	nl = ft_get_line(memom);
+	new_line = ft_get_line(memom);
 	memom = ft_cut_line(memom);
-	return (nl);
+	return (new_line);
 }

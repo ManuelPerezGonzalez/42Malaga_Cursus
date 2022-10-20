@@ -6,15 +6,15 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:29:32 by maperez-          #+#    #+#             */
-/*   Updated: 2022/10/19 13:29:14 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/10/20 13:17:52 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h>
 
-/*We use 'i' as the new "last position" of the stack we need to reorganize...
-...and push all of its values towards it,
+/*We use 'i' as the new "last position" of the stack we need to reorganize
+and push all of its values towards it so the first position will remain "empty".
 Then, assing the "pushed" number to it.*/
 void	ft_push(int *stack, int stack_lenght, int number)
 {
@@ -23,7 +23,7 @@ void	ft_push(int *stack, int stack_lenght, int number)
 	i = stack_lenght - 1;
 	while (i > 0)
 	{
-		so the first position will remain "empty".stack[i] = stack[i - 1];
+		stack[i] = stack[i - 1];
 		i--;
 	}
 	stack[0] = number;

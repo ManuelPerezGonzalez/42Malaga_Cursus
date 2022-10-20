@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 18:33:26 by maperez-          #+#    #+#             */
-/*   Updated: 2022/10/20 09:26:46 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/10/20 13:14:45 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	ft_strlen(char *str)
 {
 	int	i;
 
+	i = 0;
 	while (str[i])
 		i++;
 	return (i);
@@ -26,16 +27,16 @@ int	ft_strlen(char *str)
 // has an end (\n) and returns true if found.
 int	ft_is_line(char *memom, int n)
 {
-	int	n;
+	int	i;
 
 	if (n < BUFFER_SIZE)
 		return (1);
+	i = 0;
 	if (!memom)
 		return (0);
-	i = 0;
 	while (memom[i])
 	{
-		if (memom[i] == "\n")
+		if (memom[i] == '\n')
 			return (1);
 		i++;
 	}
