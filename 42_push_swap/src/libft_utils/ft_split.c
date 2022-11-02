@@ -6,14 +6,14 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 09:36:02 by maperez-          #+#    #+#             */
-/*   Updated: 2022/10/19 13:27:50 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:02:52 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // Ignore any "c" repeats at the beginning.
-// Check if we'r e already at the end.
+// Check if we're already at the end.
 // Found first "word".
 // Eliminate every possible "c" character repetition between words
 // While counting them.

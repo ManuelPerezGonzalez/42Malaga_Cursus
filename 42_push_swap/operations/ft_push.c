@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:29:32 by maperez-          #+#    #+#             */
-/*   Updated: 2022/10/20 13:17:52 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/10/21 13:13:39 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,27 +44,29 @@ void	ft_remove_element(int *stack, int stack_len)
 	stack[i] = 0;
 }
 
-// Both of the next functions do the same task, push and remove an element...
-// ...from one of the stacks to the other
+// Both of the next functions do the same task, push and remove an element
+// from one of the stacks to the other
 // Resize stack.
-void	ft_push_a(t_stacks *stacks, int checkwrite)
+void	ft_push_a(t_stacks *stack, int checkwrite)
 {
-	if (stacks->stack_b == 0)
+	if (stack->stack_b == 0)
 		return ;
-	ft_push(stacks->stack_a, ++stacks->size_a, stacks->stack_b[0]);
-	ft_remove_element(stacks->stack_b, stacks->size_b);
-	stacks->size_b--;
+	ft_push(stack->stack_a, ++stack->size_a, stack->stack_b[0]);
+	ft_remove_element(stack->stack_b, stack->size_b);
+	stack->size_b--;
 	if (checkwrite)
 		write(1, "pa\n", 3);
 }
+	//ft_print_struct(stack);
 
-void	ft_push_b(t_stacks *stacks, int checkwrite)
+void	ft_push_b(t_stacks *stack, int checkwrite)
 {
-	if (stacks->stack_a == 0)
+	if (stack->stack_a == 0)
 		return ;
-	ft_push(stacks->stack_b, ++stacks->size_b, stacks->stack_a[0]);
-	ft_remove_element(stacks->stack_a, stacks->size_a);
-	stacks->size_a--;
+	ft_push(stack->stack_b, ++stack->size_b, stack->stack_a[0]);
+	ft_remove_element(stack->stack_a, stack->size_a);
+	stack->size_a--;
 	if (checkwrite)
 		write(1, "pb\n", 3);
 }
+	//ft_print_struct(stack);

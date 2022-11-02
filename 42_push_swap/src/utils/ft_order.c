@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 09:36:39 by maperez-          #+#    #+#             */
-/*   Updated: 2022/10/20 12:38:53 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/11/02 10:21:37 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,83 +22,87 @@
 // Until its ordered we'll rotate the base 2 numbers with every i iteration and
 // if the & comparison returns true, rotate the number and leave it in
 // stack_a, else push it to stack_b. Then return all of them to stack_a.
-void	ft_radix(t_stacks *stacks)
+void	ft_radix(t_stacks *stack)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (ft_is_ordered(stacks) != 1)
+	while (ft_is_ordered(stack) != 1)
 	{
 		j = 0;
-		while (j < stacks->max_size)
+		while (j < stack->max_size)
 		{
-			if (stacks->stack_a[0] >> i & 1)
-				ft_rotate_a(stacks, 1);
+			if (stack->stack_a[0] >> i & 1)
+				ft_rotate_a(stack, 1);
 			else
-				ft_push_b(stacks, 1);
+				ft_push_b(stack, 1);
 			j++;
 		}
-		while (stacks->size_b != 0)
-			ft_push_a(stacks, 1);
+		while (stack->size_b != 0)
+			ft_push_a(stack, 1);
 		i++;
 	}
 }
 
 // To fully understand this function,
 // you can use a notebook to simulate an array and the operations results.
-void	ft_order_three(t_stacks *stacks)
+void	ft_order_three(t_stacks *stack)
 {
-	if (stacks->stack_a[0] > stacks->stack_a[1]
-		&& stacks->stack_a[1] > stacks->stack_a[2])
+	if (stack->stack_a[0] > stack->stack_a[1]
+		&& stack->stack_a[1] > stack->stack_a[2])
 	{
-		ft_swap_a(stacks, 1);
-		ft_reverse_rotate_a(stacks, 1);
+		ft_swap_a(stack, 1);
+		ft_reverse_rotate_a(stack, 1);
 	}
-	else if (stacks->stack_a[0] > stacks->stack_a[2]
-		&& stacks->stack_a[2] > stacks->stack_a[1])
-		ft_rotate_a(stacks, 1);
-	else if (stacks->stack_a[2] > stacks->stack_a[0]
-		&& stacks->stack_a[0] > stacks->stack_a[1])
-		ft_swap_a(stacks, 1);
-	else if (stacks->stack_a[1] > stacks->stack_a[0]
-		&& stacks->stack_a[0] > stacks->stack_a[2])
-		ft_reverse_rotate_a(stacks, 1);
-	else if (stacks->stack_a[1] > stacks->stack_a[2]
-		&& stacks->stack_a[2] > stacks->stack_a[0])
+	else if (stack->stack_a[2] > stack->stack_a[0]
+		&& stack->stack_a[0] > stack->stack_a[1])
+		ft_swap_a(stack, 1);
+	else if (stack->stack_a[0] > stack->stack_a[2]
+		&& stack->stack_a[2] > stack->stack_a[1])
 	{
-		ft_reverse_rotate_a(stacks, 1);
-		ft_swap_a(stacks, 1);
+		ft_rotate_a(stack, 1);
+	}
+	else if (stack->stack_a[1] > stack->stack_a[0]
+		&& stack->stack_a[0] > stack->stack_a[2])
+		ft_reverse_rotate_a(stack, 1);
+	else if (stack->stack_a[1] > stack->stack_a[2]
+		&& stack->stack_a[2] > stack->stack_a[0])
+	{
+		ft_reverse_rotate_a(stack, 1);
+		ft_swap_a(stack, 1);
 	}
 }
 
 // First of all find the two smallest numbers and push them to stack_b.
 // Then order the other three and recover pushed numbers.
 // And if its needed, order them.
-void	ft_order_five(t_stacks *stacks)
+void	ft_order_five(t_stacks *stack)
 {
-	while (!(stacks->stack_a[0] == 0 || stacks->stack_a[0] == 1))
-		ft_rotate_a(stacks, 1);
-	ft_push_b(stacks, 1);
-	while (!(stacks->stack_a[0] == 0 || stacks->stack_a[0] == 1))
-		ft_rotate_a(stacks, 1);
-	ft_push_b(stacks, 1);
-	ft_order_three(stacks);
-	ft_push_a(stacks, 1);
-	ft_push_a(stacks, 1);
-	if (stacks->stack_a[0] != 0)
-		ft_swap_a(stacks, 1);
+	while (!(stack->stack_a[0] == 0 || stack->stack_a[0] == 1))
+	{
+		ft_rotate_a(stack, 1);
+	}
+	ft_push_b(stack, 1);
+	while (!(stack->stack_a[0] == 0 || stack->stack_a[0] == 1))
+		ft_rotate_a(stack, 1);
+	ft_push_b(stack, 1);
+	ft_order_three(stack);
+	ft_push_a(stack, 1);
+	ft_push_a(stack, 1);
+	if (stack->stack_a[0] != 0)
+		ft_swap_a(stack, 1);
 }
 
 // This function has to order stack_a considering its lenght.
-void	ft_order(t_stacks *stacks)
+void	ft_order(t_stacks *stack)
 {
-	if (stacks->max_size == 2)
-		ft_swap_a(stacks, 1);
-	else if (stacks->max_size == 3)
-		ft_order_three(stacks);
-	else if (stacks->max_size == 5)
-		ft_order_five(stacks);
+	if (stack->max_size == 2)
+		ft_swap_a(stack, 1);
+	else if (stack->max_size == 3)
+		ft_order_three(stack);
+	else if (stack->max_size == 5)
+		ft_order_five(stack);
 	else
-		ft_radix(stacks);
+		ft_radix(stack);
 }

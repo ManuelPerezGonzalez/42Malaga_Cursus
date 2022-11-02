@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:30:17 by maperez-          #+#    #+#             */
-/*   Updated: 2022/10/19 13:29:59 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/10/21 13:13:21 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	ft_swap_a(t_stacks *stack, int checkwrite)
 	if (checkwrite)
 		write(1, "sa\n", 3);
 }
+	//ft_print_struct(stack);
 
 void	ft_swap_b(t_stacks *stack, int checkwrite)
 {
@@ -40,11 +41,13 @@ void	ft_swap_b(t_stacks *stack, int checkwrite)
 	if (checkwrite)
 		write(1, "sb\n", 3);
 }
+	//ft_print_struct(stack);
 
-void	ft_swap_both(t_stacks *stacks, int checkwrite)
+void	ft_swap_both(t_stacks *stack, int checkwrite)
 {
-	ft_swap_a(stacks, 0);
-	ft_swap_b(stacks, 0);
+	ft_swap_a(stack, 0);
+	ft_swap_b(stack, 0);
 	if (checkwrite)
 		write(1, "ss\n", 3);
 }
+	//ft_print_struct(stack);

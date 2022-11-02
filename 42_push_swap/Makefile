@@ -1,12 +1,12 @@
 NAME	= push_swap
 BNAME	= checker
 
-SRCS	= src/push_swap.c src/libft_utils/ft_libft_utils.c src/libft_utils/ft_split.c src/utils/ft_manage_memory.c \
-			src/utils/ft_order.c src/utils/ft_print_struct.c src/utils/ft_utils.c \
-			operations/ft_push.c operations/ft_reverse_rotate.c operations/ft_rotate.c operations/ft_swap.c
+SRCS	= src/utils/ft_order.c src/utils/ft_manage_memory.c \
+			src/libft_utils/ft_libft_utils.c src/libft_utils/ft_split.c \
+			src/utils/ft_print_struct.c src/utils/ft_utils.c \
+			operations/ft_push.c operations/ft_reverse_rotate.c operations/ft_rotate.c operations/ft_swap.c src/push_swap.c 
 
-BSRCS	= src/get_next_line/get_next_line_utils.c src/get_next_line/get_next_line.c \
-			src/libft_utils/ft_libft_utils.c src/libft_utils/ft_split.c src/utils/ft_manage_memory.c \
+BSRCS	= src/libft_utils/ft_libft_utils.c src/libft_utils/ft_split.c src/utils/ft_manage_memory.c \
 			src/utils/ft_order.c src/utils/ft_print_struct.c src/utils/ft_utils.c \
 			operations/ft_push.c operations/ft_reverse_rotate.c operations/ft_rotate.c operations/ft_swap.c \
 			src/get_next_line/get_next_line_utils.c src/get_next_line/get_next_line.c bonus/checker.c
@@ -17,7 +17,7 @@ BOBJS	= ${BSRCS:.c=.o}
 
 CC		= gcc
 
-LIBRARIES = libraries
+LIBRARIES = libraries/
 
 CFLAGS	= -Wall -Werror -Wextra -I ${LIBRARIES}
 
@@ -37,7 +37,6 @@ fclean:		clean
 bonus:		${BOBJS}
 			${CC} ${BOBJS} -o ${BNAME}
 
-re:			fclean all bonus
+re:			fclean all
 
 .PHONY: all, clean, fclean, re, bonus
-

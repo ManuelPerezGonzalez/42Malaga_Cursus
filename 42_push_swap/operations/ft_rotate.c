@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:30:20 by maperez-          #+#    #+#             */
-/*   Updated: 2022/10/20 13:18:33 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/10/21 13:13:09 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,29 +28,32 @@ void	ft_rotate(int *stack, int stack_lenght, int number)
 	stack[i] = number;
 }
 
-void	ft_rotate_a(t_stacks *stacks, int checkwrite)
+void	ft_rotate_a(t_stacks *stack, int checkwrite)
 {
-	if (stacks->size_a < 2)
+	if (stack->size_a < 2)
 		return ;
-	ft_rotate(stacks->stack_a, stacks->size_a, stacks->stack_a[0]);
+	ft_rotate(stack->stack_a, stack->size_a, stack->stack_a[0]);
 	if (checkwrite)
 		write(1, "ra\n", 3);
 }
+	//ft_print_struct(stack);
 
-void	ft_rotate_b(t_stacks *stacks, int checkwrite)
+void	ft_rotate_b(t_stacks *stack, int checkwrite)
 {
-	if (stacks->size_b < 2)
+	if (stack->size_b < 2)
 		return ;
-	ft_rotate(stacks->stack_b, stacks->size_b, stacks->stack_b[0]);
+	ft_rotate(stack->stack_b, stack->size_b, stack->stack_b[0]);
 	if (checkwrite)
 		write(1, "rb\n", 3);
 }
+	//ft_print_struct(stack);
 
 // Calls both rotation functions at the same time (considered one operation).
-void	ft_rotate_both(t_stacks *stacks, int checkwrite)
+void	ft_rotate_both(t_stacks *stack, int checkwrite)
 {
-	ft_rotate_a(stacks, 0);
-	ft_rotate_b(stacks, 0);
+	ft_rotate_a(stack, 0);
+	ft_rotate_b(stack, 0);
 	if (checkwrite)
 		write(1, "rr\n", 3);
 }
+	//ft_print_struct(stack);

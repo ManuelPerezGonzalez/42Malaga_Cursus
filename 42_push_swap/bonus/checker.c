@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 15:51:33 by maperez-          #+#    #+#             */
-/*   Updated: 2022/10/20 13:23:46 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/11/02 10:38:56 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_is_operation(char *op, t_stacks *stack)
 		ft_swap_both(stack, 0);
 	else if (!ft_strncmp(op, "pa\n", 3))
 		ft_push_a(stack, 0);
-	else if (!ft_strncmp(op, "pa\n", 3))
+	else if (!ft_strncmp(op, "pb\n", 3))
 		ft_push_b(stack, 0);
 	else if (!ft_strncmp(op, "ra\n", 3))
 		ft_rotate_a(stack, 0);

@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 09:37:10 by maperez-          #+#    #+#             */
-/*   Updated: 2022/10/20 13:29:02 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/10/21 11:03:29 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
+# include <stdio.h>
 
 // Struct
 typedef struct s_stacks
